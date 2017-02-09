@@ -1,0 +1,21 @@
+<html>
+  <body>
+
+    {% include "jukebox/menu.html"  %}
+
+    <div id="track" style="text-align: center">
+      <div id="track info" style="text-align: center">
+        {{ track.title  }}<br>
+        {{ track.artist }}<br>
+        {{ track.album_name }}<br>
+        {{ track.length }}<br><br>
+      </div>
+
+     <audio controls>
+         <source src="{{ track.music_file.url }}">
+     </audio>
+
+    </div>
+
+  </body>
+</html>

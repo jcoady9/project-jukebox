@@ -1,0 +1,15 @@
+<html>
+  <body>
+
+    {% include "jukebox/menu.html"  %}
+
+    <h4>Albums:</h4>
+    {% if album_list %}
+      <ul>
+      {% for album in album_list %}
+      <li><a href={% url 'album_detail' album.id  %}>{{ album.title }} </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  </body>
+</html>

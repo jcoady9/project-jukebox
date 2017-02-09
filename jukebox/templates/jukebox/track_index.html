@@ -1,0 +1,15 @@
+<html>
+  <body>
+
+    {% include "jukebox/menu.html" %}
+
+    <h4>Tracks</h4>
+    {% if track_list %}
+      <ul>
+      {% for track in track_list  %}
+        <li><a href="{% url 'track_detail' track.id  %}">{{track.title}}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  </body>
+</html>

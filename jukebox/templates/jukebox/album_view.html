@@ -1,0 +1,21 @@
+<html>
+  <body>
+
+    {% include "jukebox/menu.html"  %}
+
+    <div id="album info">
+      {{ album.title  }}<br>
+      {{ album.artist }}<br>
+      {{ ablum.length }}
+    </div>
+
+    <h3>Tracks:</h3>
+
+    <ul>
+    {% for track in album.track_set.all %}
+      <li><a href={% url 'track_detail' track.id %}>{{ track.title }}</li>
+    {% endfor %}
+    </ul>
+
+  </body>
+</html>
